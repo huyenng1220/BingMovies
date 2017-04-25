@@ -1,0 +1,19 @@
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<div class="container">
+	<div style='float: left;'>
+	<div class="dropdown">
+		<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" float= "right">Sort by
+   		<span class="caret"></span></button>		
+   			<ul class="dropdown-menu">
+   			<li><%= link_to "Title", search: params[:search], filter: params[:filter], order: "title" %></li>
+			<li><%= link_to "Release Date", search: params[:search], filter: params[:filter], order: "release" %></li>
+			<li><%= link_to "Genre", search: params[:search], filter: params[:filter], order: "genre" %></li>
+			</ul>
+		</div>
+	</div>x
+</div>

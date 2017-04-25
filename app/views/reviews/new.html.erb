@@ -1,0 +1,38 @@
+<%= link_to 'Back', movie_reviews_path %>
+<h1 align="center">New Review</h1>
+<%= render "share/errors", object: @review %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+      <%= form_for(@review, html: { class: "form-horizontal", role: "form" }, url: movie_reviews_path) do |f| %>
+      <div class="form-group">
+        <div class="col-sm-2 control-label">
+          <%= f.label :rating %>
+        </div>
+        <div class="col-sm-4">
+          <%= f.text_field :rating, class: "form-control", placeholder: "Rate the movie", autofocus: true,required: true %>
+        </div>
+        
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-2 control-label">
+          <%= f.label :review %>
+        </div>
+        <div class="col-sm-8">
+          <%= f.text_field :review, class: "form-control", placeholder: "Rate the movie", autofocus: true,required: true %>
+        </div>
+        
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <%= f.submit "Publish", class: "btn btn-primary" %>
+        </div>
+      </div>
+
+      <% end %>
+
+    </div>
+  </div>
+</div>
+

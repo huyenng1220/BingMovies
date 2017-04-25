@@ -1,0 +1,48 @@
+
+<%= link_to 'Back', root_path %>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-4">
+        <%= image_tag("https://image.tmdb.org/t/p/w300/#{@movie['poster_path']}") %>
+      </div>
+
+      <div class="col-md-3">
+          <table class="table"%>
+            <tbody>
+              <tr>
+          <td><strong>Title:</strong></td>
+         <td><%= @movie['title'] %></td>
+         </tr>
+         <tr>
+         <td><strong>Release Date:</strong></td>
+         <td><%= @movie['release_date'] %></td>
+         </tr>
+         </tbody>
+         </table>
+        <%= link_to "Create a review", new_movie_review_path(@movie['id']) %>
+
+         </div>
+         <div class="col-md-3">
+         <% @reviews.each do |review| %>
+         <table class="table">
+            <tbody>
+              <tr>
+          <td><strong>User:</strong></td>
+         <td><%= review.user.email  %> at <%= review.created_at.to_date %></td>
+         </tr>
+         <tr>
+         <td><strong>Rating:</strong></td>
+                <td><%= review.rating %></td>
+              </tr>
+ 
+         <tr>
+         <td><strong>Review </strong></td>
+          <td><%= review.review %></td>
+          </tr>
+         </tbody>
+    <%end%> 
+         </div>
+</div>
+</div>
+</div>
+  
